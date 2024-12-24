@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 20</title>
+    <style>
+        table,tr,td{
+            border: 3px none;
+            height: 50px;
+            width: 900px;
+            margin-top: 100px;
+        }
+        input{
+            height: 50px;
+            width: 230px;
+        }
+        .r1{
+            border: 2px solid black;
+            text-align: center;
+        }
+        #i{
+            width: 690px;
+            background-color: rgb(177, 214, 177);
+            color: blue;
+        }
+        #i2{
+            background-color: rgb(161, 200, 212);
+            color: blue;
+        }
+        #i3{
+            background-color: rgb(246, 186, 113);
+            color: blue;
+        }
+        #i4{
+            background-color: rgb(155, 155, 155);
+            color: blue;
+        }
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <table>
+        <tr>
+            <td colspan="4" class="r1"><h1>TEQ Calc</h1></td>
+        </tr>
+
+        <tr>
+            <td colspan="3"><input type="text" name="" id="i"></td>
+            <td><input type="button" value="C" class="C" id="i2" onclick="n.clr()"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="n.view(1)" id="i3"></td>
+            <td><input type="button" value="2" onclick="n.view(2)" id="i3"></td>
+            <td><input type="button" value="3" onclick="n.view(3)" id="i3"></td>
+            <td><input type="button" value="/" onclick="n.view('/')" id="i2"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4" onclick="n.view(4)" id="i3"></td>
+            <td><input type="button" value="5" onclick="n.view(5)" id="i3"></td>
+            <td><input type="button" value="6" onclick="n.view(6)" id="i3"></td>
+            <td><input type="button" value="-" onclick="n.view('-')" id="i2"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="7" onclick="n.view(7)" id="i3"></td>
+            <td><input type="button" value="8" onclick="n.view(8)" id="i3"></td>
+            <td><input type="button" value="9" onclick="n.view(9)" id="i3"></td>
+            <td><input type="button" value="+" onclick="n.view('+')" id="i2"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="." onclick="n.view('.')" id="i2"></td>
+            <td><input type="button" value="0" onclick="n.view(0)" id="i3"></td>
+            <td><input type="button" value="=" class="eval" onclick="n.compute" id="i4"></td>
+            <td><input type="button" value="*" class="pm" onclick="n.view('*')" id="i2"></td>
+        </tr>
+    </table>
+
+    <script>
+        class calculator
+        {
+            view(n)
+            {
+                document.getElementById("i").value+=n;
+            }
+            clr()
+            {
+                document.getElementById("i").value='';
+            }
+            compute()
+            {
+                var x=document.getElementById("i").value;
+                let y=eval(x);
+                document.getElementById("i").value=y;
+            }
+        }
+        let n=new calculator();
+    </script>
+</center>
+</body>
+</html>
